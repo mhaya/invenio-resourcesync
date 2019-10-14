@@ -41,3 +41,21 @@ def capabilitylist():
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
+
+@blueprint.route("/resourcelist.xml")
+def resourcelist():
+    template = render_template(
+        "invenio_resourcesync/resourcelist.xml",
+        request_url=url_for(request.url))
+    response = make_response(template)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
+
+@blueprint.route("/changelist.xml")
+def changelist():
+    template = render_template(
+        "invenio_resourcesync/changelist.xml",
+        request_url=url_for(request.url))
+    response = make_response(template)
+    response.headers['Content-Type'] = 'application/xml'
+    return response

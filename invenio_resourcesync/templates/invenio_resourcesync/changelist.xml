@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:rs="http://www.openarchives.org/rs/terms/">
+<rs:ln href="http://localhost:8888" rel="describedby"/>
+<rs:ln href="http://localhost:8888/capabilitylist.xml" rel="up"/>
+<rs:md capability="changelist" from="2019-10-14T00:00:18.322526Z" until="2019-10-14T00:07:58.696335Z"/>
+<url>
+<loc>http://localhost:8888/resources/1001</loc>
+<lastmod>2019-10-14T00:00:18.322526Z</lastmod>
+<rs:md change="created" hash="md5:befe4869d2cd25c5d6acaf1bb3fc171e" length="56"/>
+</url>
+<url>
+<loc>http://localhost:8888/resources/424</loc>
+<lastmod>2019-10-14T00:00:20.326646Z</lastmod>
+<rs:md change="deleted"/>
+</url>
+<url>
+<loc>http://localhost:8888/resources/841</loc>
+<lastmod>2019-10-14T00:00:24.332819Z</lastmod>
+<rs:md change="updated" hash="md5:1bba7a8162e7dd1b3f179469a4858170" length="270"/>
+</url>
+</urlset>

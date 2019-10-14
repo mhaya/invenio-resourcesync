@@ -11,4 +11,16 @@
 <loc>{{ request_url }}/changelist.xml</loc>
 <rs:md capability="changelist"/>
 </url>
+ <url>
+      <loc>{{ request_url }}/resourcedump.xml</loc>
+      <rs:md capability="resourcedump"/>
+  </url>
+  <url>
+      <loc>{{ request_url }}/changelist.xml</loc>
+      <rs:md capability="changelist"/>
+  </url>
+  <url>
+      <loc>{{ request_url }}/changedump.xml</loc>
+      <rs:md capability="changedump"/>
+  </url>
 </urlset>
