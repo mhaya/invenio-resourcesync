@@ -26,8 +26,10 @@
 
 from __future__ import absolute_import, print_function
 
-from zenodo.modules.records.fetchers import zenodo_record_fetcher
-from zenodo.modules.records.serializers import json_v1
+#from zenodo.modules.records.fetchers import zenodo_record_fetcher
+#from zenodo.modules.records.serializers import json_v1
+from weko_records.fetchers import weko_record_fetcher
+from weko_records.serializers.jpcoar import JpcoarSerializer
 
 from .streams import BZip2ResultStream
 from .writers import BucketWriter, filename_factory
@@ -37,13 +39,13 @@ EXPORTER_BUCKET_UUID = '00000000-0000-0000-0000-000000000001'
 EXPORTER_JOBS = {
     'records': {
         'index': 'records',
-        'serializer': json_v1,
+        'serializer': JpcoarSerializer,
         'writer': BucketWriter(
             bucket_id=EXPORTER_BUCKET_UUID,
             key=filename_factory(name='records', format='json.bz2'),
         ),
         'resultstream_cls': BZip2ResultStream,
-        'pid_fetcher': zenodo_record_fetcher,
+        'pid_fetcher': weko_record_fetcher,
         'query': "+_exists_:recid +_missing_:removal_reason"
     }
 }
