@@ -23,16 +23,6 @@ blueprint = Blueprint(
     static_folder='static',
 )
 
-
-@blueprint.route("/")
-def index():
-    """Render a basic view."""
-    return render_template(
-        "invenio_resourcesync/index.html",
-        module_name=_('Invenio-ResourceSync'))
-
-
-
 @blueprint.route("/.well-known/resourcesync")
 def sourceDescription():
     return render_template(
