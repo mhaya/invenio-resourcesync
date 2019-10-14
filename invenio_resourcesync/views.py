@@ -26,12 +26,12 @@ blueprint = Blueprint(
 @blueprint.route("/.well-known/resourcesync")
 def sourceDescription():
     return render_template(
-        "invenio_resourcesync/index.html",
+        "invenio_resourcesync/resourcesync.xml",
         module_name=_('Invenio-ResourceSync'))
 
 
 @blueprint.route("/capabilitylist.xml")
 def capabilitylist():
     return render_template(
-        "invenio_resourcesync/index.html",
+        "invenio_resourcesync/capabilitylist.xml",
         module_name=_('Invenio-ResourceSync'))
