@@ -27,7 +27,7 @@ blueprint = Blueprint(
 def sourceDescription():
     template = render_template(
         "invenio_resourcesync/resourcesync.xml",
-        request_url=request.url)
+        req_url_root=request.url_root)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
@@ -37,7 +37,7 @@ def sourceDescription():
 def capabilitylist():
     template = render_template(
         "invenio_resourcesync/capabilitylist.xml",
-        request_url=request.url)
+        req_url_root=request.url_root)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
