@@ -43,6 +43,7 @@ setup_requires = [
 
 install_requires = [
     'Flask-BabelEx>=0.9.3',
+    
 ]
 
 packages = find_packages()
@@ -71,12 +72,16 @@ setup(
     entry_points={
         'invenio_base.apps': [
             'invenio_resourcesync = invenio_resourcesync:InvenioResourceSync',
+            'zenodo_exporter = invenio_resourcesync.exporter.ext:InvenioExporter',
         ],
         'invenio_base.blueprints': [
             'invenio_resourcesync = invenio_resourcesync.views:blueprint',
         ],
         'invenio_i18n.translations': [
             'messages = invenio_resourcesync',
+        ],
+        'invenio_base.api_apps': [
+            'zenodo_exporter = invenio_resourcesync.exporter.ext:InvenioExporter',
         ],
         # TODO: Edit these entry points to fit your needs.
         # 'invenio_access.actions': [],
@@ -85,7 +90,9 @@ setup(
         # 'invenio_base.api_apps': [],
         # 'invenio_base.api_blueprints': [],
         # 'invenio_base.blueprints': [],
-        # 'invenio_celery.tasks': [],
+        'invenio_celery.tasks': [
+            'zenodo_exporter = invenio_resourcesync.exporter.tasks',
+        ],
         # 'invenio_db.models': [],
         # 'invenio_pidstore.minters': [],
         # 'invenio_records.jsonresolver': [],
