@@ -3,7 +3,7 @@
 <rs:ln href="{{ req_url_root }}" rel="describedby"/>
 <rs:md capability="description"/>
 <url>
-<loc>{{ req_url_root }}/capabilitylist.xml</loc>
+<loc>{{ req_url_root }}capabilitylist.xml</loc>
 <rs:md capability="capabilitylist"/>
 </url>
 </urlset>
