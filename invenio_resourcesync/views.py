@@ -13,7 +13,7 @@
 
 from __future__ import absolute_import, print_function
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, make_response
 from flask_babelex import gettext as _
 
 blueprint = Blueprint(
@@ -25,13 +25,19 @@ blueprint = Blueprint(
 
 @blueprint.route("/.well-known/resourcesync")
 def sourceDescription():
-    return render_template(
+    template = render_template(
         "invenio_resourcesync/resourcesync.xml",
         module_name=_('Invenio-ResourceSync'))
+    response = make_response(template)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
 
 
 @blueprint.route("/capabilitylist.xml")
 def capabilitylist():
-    return render_template(
+    template = render_template(
         "invenio_resourcesync/capabilitylist.xml",
         module_name=_('Invenio-ResourceSync'))
+    response = make_response(template)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
