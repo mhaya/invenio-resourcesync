@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:rs="http://www.openarchives.org/rs/terms/">
-<rs:ln href="http://localhost:8888" rel="describedby"/>
+<rs:ln href="{{ request_url }}" rel="describedby"/>
 <rs:md capability="description"/>
 <url>
-<loc>http://localhost:8888/capabilitylist.xml</loc>
+<loc>{{ request_url }}/capabilitylist.xml</loc>
 <rs:md capability="capabilitylist"/>
 </url>
 </urlset>
