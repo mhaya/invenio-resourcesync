@@ -27,7 +27,7 @@ blueprint = Blueprint(
 def sourceDescription():
     template = render_template(
         "invenio_resourcesync/resourcesync.xml",
-        request_url=url_for(request.url))
+        request_url=request.url)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
@@ -37,7 +37,7 @@ def sourceDescription():
 def capabilitylist():
     template = render_template(
         "invenio_resourcesync/capabilitylist.xml",
-        request_url=url_for(request.url))
+        request_url=request.url)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
@@ -46,7 +46,7 @@ def capabilitylist():
 def resourcelist():
     template = render_template(
         "invenio_resourcesync/resourcelist.xml",
-        request_url=url_for(request.url))
+        request_url=request.url)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
@@ -55,7 +55,7 @@ def resourcelist():
 def changelist():
     template = render_template(
         "invenio_resourcesync/changelist.xml",
-        request_url=url_for(request.url))
+        request_url=request.url)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
